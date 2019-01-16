@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../bootstrap-4.1.3-dist/css/bootstrap.min.css">
@@ -17,12 +18,12 @@
       includeHTML();
     </script>
 
-    <div class="container">
-      <div class="row justify-content-md-center" align="center">
-        <div clas="col-4"></div>
 
-        <div class="col-4 login-form-1" text-align="center">
-            <h3>Introduzca sus credenciales</h3>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4" align="center">
+          <h3>Introduzca sus credenciales</h3>
           <form action="login.php" method="post">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Tu Usuario *" value="" name="usuario" id="usuario" />
@@ -31,14 +32,13 @@
               <input type="password" class="form-control" placeholder="Tu Contraseña *" value="" name="password" id="password"/>
             </div>
             <div class="form-group">
-              <input type="submit" class="btn-lg" value="Entrar en la aplicacion" />
+              <input type="submit" align="center" class="btn-lg" value="Entrar en la aplicacion" />
             </div>
           </form>
         </div>
-
-        <div class="col-4"></div>
+        <div class="col-sm-4"></div>
       </div>
-    </div>
+</div>
 
   </body>
 </html>
