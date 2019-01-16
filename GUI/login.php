@@ -6,33 +6,29 @@
     <script src="../jquery/jquery-3.3.1.min.js"></script>
     <script src="../bootstrap-4.1.3-dist/js/bootstrap.min.js" ></script>
 
+    <script src="../SCRIPTS/includehtml.js"></script>
+
     <title> Transportgest</title>
   </head>
   <body>
-    <nav class="navbar navbar-inverse" font-size="40px">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="mantenimiento.html"><img src="../imagenes/logo.png" width="40" height="35"/></a>
-        </div>
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="mantenimiento.html"><font size="4">Home</font></a></li>
-          <li><a href="login.html"><font size="4">Log-in</font></a></li>
-          <li><a href="contacto.html"><font size="4">Contacto</font></a></li>
-        </ul>
-      </div>
-    </nav>
+
+    <div w3-include-html="menusinlogin.html"></div>
+    <script>
+      includeHTML();
+    </script>
+
     <div class="container">
       <div class="row justify-content-md-center" align="center">
         <div clas="col-4"></div>
 
         <div class="col-4 login-form-1" text-align="center">
             <h3>Introduzca sus credenciales</h3>
-          <form>
+          <form action="login.php" method="post">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Tu Usuario *" value="" id="usuario" />
+              <input type="text" class="form-control" placeholder="Tu Usuario *" value="" name="usuario" id="usuario" />
             </div>
             <div class="form-group">
-              <input type="password" class="form-control" placeholder="Tu Contraseña *" value="" id="password"/>
+              <input type="password" class="form-control" placeholder="Tu Contraseña *" value="" name="password" id="password"/>
             </div>
             <div class="form-group">
               <input type="submit" class="btn-lg" value="Entrar en la aplicacion" />
@@ -46,3 +42,7 @@
 
   </body>
 </html>
+
+<?php
+  include "/Applications/MAMP/htdocs/transportgest/LOGICA/login.php";
+?>
