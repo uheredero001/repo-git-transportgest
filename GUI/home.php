@@ -13,7 +13,7 @@
   <body>
     <?php
       session_start();
-      include "/Applications/MAMP/htdocs/transportgest/DATAACCESS/accesobd.php";
+      include "/Applications/MAMP/htdocs/transportgest/DATAACCESS/accesobdUsuario.php";
 
       if(esAdmin($_SESSION['user']))
       {

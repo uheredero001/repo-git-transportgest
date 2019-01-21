@@ -23,7 +23,9 @@
       <div class="row">
         <div class="col-sm-4"></div>
         <div class="col-sm-4">
-          TABLA CON DATOS
+          <?php
+              include "/Applications/MAMP/htdocs/transportgest/LOGICA/verUsuarios.php";
+          ?>
         </div>
         <div class="col-sm-4"></div>
       </div>
@@ -32,6 +34,3 @@
   </body>
 
 </html>
-
-<?php
-?>

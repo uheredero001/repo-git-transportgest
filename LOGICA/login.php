@@ -1,5 +1,5 @@
 <?php
-    include "/Applications/MAMP/htdocs/transportgest/DATAACCESS/accesobd.php";
+    include "/Applications/MAMP/htdocs/transportgest/DATAACCESS/accesobdUsuario.php";
     if(isset($_POST['usuario'])&&isset($_POST['password']))
     {
       $usuario=$_POST['usuario'];

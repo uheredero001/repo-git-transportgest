@@ -3,6 +3,22 @@
     include $fichero_credenciales;
 
     /////////////////////////////////FUNCIONES DE INSERCION/////////////////////////////////////////////////////////
+    function insertUser($nick,$password,$privilegios,$nombre,$apellidos)//Devuelve 0 si todo va bien y /=0 si no
+    {
+      global $conexionbd;
+      $insert ="INSERT INTO `Usuario`(`Nick`, `Password`, `Nombre`, `Apellidos`, `Privilegios`, `FechaUltAcceso`)
+                VALUES ('$nick','$password','$privilegios','$nombre','$apellidos',NULL)";
+      if($conexionbd->query($query))
+      {
+        return 0;
+      }
+
+        return -1;
+
+
+    }
+
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -56,84 +72,24 @@
     {
       global $conexionbd;
 
-      $query = "SELECT * FROM Usuario WHERE Nick='$nick'";
+      $query = "SELECT Id,Nick,Nombre,Apellidos,Privilegios,FechaUltAcceso FROM Usuario WHERE Nick='$nick'";
       $resultado=$conexionbd->query($query);
       $fila=mysqli_fetch_row($resultado);
       return $fila;
     }
 
-
-    function existVehicle ($matricula) //Devuelve 0 si no existe y /=0 si existe
+    function getUsers()//Devuelve el nick de todos los gestionUsuarios
     {
       global $conexionbd;
 
-      $query = "SELECT Matricula FROM Vehiculo WHERE Matricula='$matricula'";
+      $query = "SELECT Nick FROM Usuario";
       $resultado=$conexionbd->query($query);
-      return mysqli_num_rows($resultado);
+      return $resultado;
     }
 
 
-    function getVehicleInfo($matricula)//Devuelve un array con todos los datos
-    {
-      global $conexionbd;
-
-      $query = "SELECT * FROM Vehiculo WHERE Matricula='$matricula'";
-      $resultado=$conexionbd->query($query);
-      $fila=mysqli_fetch_row($resultado);
-      return $fila;
-    }
 
 
-    function existWorker ($dni) //Devuelve 0 si no existe y /=0 si existe
-    {
-      global $conexionbd;
-
-      $query = "SELECT Dni FROM Trabajador WHERE Dni='$dni'";
-      $resultado=$conexionbd->query($query);
-      return mysqli_num_rows($resultado);
-    }
-
-
-    function getWorkerInfo($dni)//Devuelve un array con todos los datos
-    {
-      global $conexionbd;
-
-      $query = "SELECT * FROM Trabajador WHERE Dni='$dni'";
-      $resultado=$conexionbd->query($query);
-      $fila=mysqli_fetch_row($resultado);
-      return $fila;
-    }
-
-
-    function existLugarDescarga ($nombre,$direccion) //Devuelve 0 si no existe y /=0 si existe
-    {
-      global $conexionbd;
-
-      $query = "SELECT Nombre FROM LugarDescarga WHERE Nombre='$nombre' AND Direccion='$direccion'";
-      $resultado=$conexionbd->query($query);
-      return mysqli_num_rows($resultado);
-    }
-
-
-    function getLugarDescargaInfo($dni,$direccion)//Devuelve un array con todos los datos
-    {
-      global $conexionbd;
-
-      $query = "SELECT * FROM LugarDescarga WHERE Nombre='$nombre' AND Direccion='$direccion'";
-      $resultado=$conexionbd->query($query);
-      $fila=mysqli_fetch_row($resultado);
-      return $fila;
-    }
-
-
-    function existViajePredeterminado ($id) //Devuelve 0 si no existe y /=0 si existe
-    {
-      global $conexionbd;
-
-      $query = "SELECT * FROM ViajePredeterminado WHERE Id='$id'";
-      $resultado=$conexionbd->query($query);
-      return mysqli_num_rows($resultado);
-    }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

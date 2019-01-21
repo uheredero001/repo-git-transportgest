@@ -21,11 +21,13 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4">
-          TABLA CON DATOS
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+          <?php
+              include "/Applications/MAMP/htdocs/transportgest/LOGICA/verVehiculos.php";
+          ?>
         </div>
-        <div class="col-sm-4"></div>
+        <div class="col-sm-2"></div>
       </div>
     </div>
 
