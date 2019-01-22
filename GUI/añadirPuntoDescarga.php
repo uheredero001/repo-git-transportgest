@@ -22,8 +22,31 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-4"></div>
-        <div class="col-sm-4">
-
+        <div class="col-sm-4" align="center" >
+            <h3>Introduzca los datos</h3>
+            <form id="nuevoPunto" method="post">
+                <div class="form-group">
+                    <input type="text"  class="form-control" placeholder="Nombre (Debe ser único) *" value="" name="nombrePunto" id="nombrePunto" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Direccion *" value="" name="direccion" id="direccion"/>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Población *" value="" name="poblacion" id="poblacion"/>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Provincia *" value="" name="provincia" id="provincia"/>
+                </div>
+                <div class="form-group">
+                  <input type="time" id="hinicio" class=" form-control" name="hinicio" value="00:00" required>
+                </div>
+                <div class="form-group">
+                  <input type="time" id="hfin" class=" form-control" name="hfin" value="00:00" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" align="center" class="btn-lg btn-success" value="Añadir Punto" />
+                </div>
+            </form>
         </div>
         <div class="col-sm-4"></div>
       </div>
