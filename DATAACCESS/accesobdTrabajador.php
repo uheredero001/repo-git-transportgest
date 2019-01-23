@@ -3,7 +3,19 @@
     include $fichero_credenciales;
 
     /////////////////////////////////FUNCIONES DE INSERCION/////////////////////////////////////////////////////////
+    function insertTrabajador($dni,$nombre,$apellidos,$puesto,$telefono,$estado)//Devuelve 0 si todo va bien y /=0 si no
+    {
+      global $conexionbd;
+      $query="INSERT INTO `Trabajador`(`Dni`, `Nombre`, `Apellidos`, `PuestoTrabajo`, `TelfPersonal`, `Estado`)
+              VALUES ('$dni','$nombre','$apellidos','$puesto','$telefono','$estado',)";
 
+      if($conexionbd->query($query)){
+        return 0;
+      }
+      else{
+        return -1;
+      }
+    }
 
 
 
@@ -49,5 +61,20 @@
 
     /////////////////////////////////FUNCIONES DE ACTUALIZACION/////////////////////////////////////////////////////
 
+    function updateAllTrabajador($id,$dni,$nombre,$apellidos,$puesto,$telefono,$estado)//Devuelve 0 si todo va bien y /=0 si no
+    {
+      global $conexionbd;
+
+      $query="UPDATE `Trabajador` SET `Dni`='$dni',`Nombre`='$apellidos',`Puesto`='$puesto',
+                      `TelfPersonal`='$telefono',`Estado`='$estado', WHERE `Id`='$id'";
+
+      if($conexionbd->query($query)){
+        return 0;
+      }
+      else{
+        return -1;
+      }
+
+    }
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ?>

@@ -4,6 +4,22 @@
 
     /////////////////////////////////FUNCIONES DE INSERCION/////////////////////////////////////////////////////////
 
+    function insertVehiculo($matricula,$tipo,$remolque,$añomatriculacion,$proximaitv,$proximaitvremolque,
+                              $capacidad,$telefono,$email)//Devuelve 0 si todo va bien y /=0 si no
+    {
+      global $conexionbd;
+
+      $query="INSERT INTO `Vehiculo`( `Matricula`, `Tipo`, `Remolque`, `AñoMatriculacion`, `ProximaItv`,
+                                    `ProximaItvRemolque`, `Capacidad`, `NTelefono`, `Email`)
+                            VALUES ('$matricula','$tipo','$remolque','$añomatriculacion','$proximaitv','$proximaitvremolque',
+                                    '$capacidad','$telefono','$email')";
+      if($conexionbd->query($query)){
+        return 0;
+      }
+      else{
+        return -1;
+      }
+    }
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -48,6 +64,23 @@
 
 
     /////////////////////////////////FUNCIONES DE ACTUALIZACION/////////////////////////////////////////////////////
+    function updateAllVehiculo($id,$matricula,$tipo,$remolque,$añomatriculacion,$proximaitv,$proximaitvremolque,
+                              $capacidad,$telefono,$email)//Devuelve 0 si todo va bien y /=0 si n
+    {
+      global $conexionbd;
+
+      $query="UPDATE `Vehiculo` SET `Matricula`='$matricula',`Tipo`='$tipo',`Remolque`='$remolque',`AñoMatriculacion`='$añomatriculacion',
+                                    `ProximaItv`='$proximaitv',`ProximaItvRemolque`='$proximaitvremolque',
+                                    `Capacidad`='$capacidad',`NTelefono`='$telefono',`Email`='$email' WHERE `Id`='$id'";
+
+      if($conexionbd->query($query)){
+        return 0;
+      }
+      else{
+        return -1;
+      }
+    }
+
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ?>

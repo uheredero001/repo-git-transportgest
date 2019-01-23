@@ -96,5 +96,51 @@
 
     /////////////////////////////////FUNCIONES DE ACTUALIZACION/////////////////////////////////////////////////////
 
+    function updatePassword($id,$password)//Devuelve 0 si va todo bien y /=0 si no
+    {
+
+      global $conexionbd;
+
+      $query="UPDATE Usuario SET Password='$password' WHERE Id='$id'";
+      if($conexionbd->query($query))
+      {
+        return 0;
+      }
+      else{
+        return -1;
+      }
+    }
+
+
+    function updateFechaUltAcceso($id,$fecha)//Devuelve 0 si va todo bien y /=0 si no
+    {
+
+      global $conexionbd;
+
+      $query="UPDATE Usuario SET FechaUltAcceso='$fecha' WHERE Id='$id'";
+      if($conexionbd->query($query))
+      {
+        return 0;
+      }
+      else{
+        return -1;
+      }
+    }
+
+
+    function updatePrivilegios($id,$privilegios)//Devuelve 0 si va todo bien y /=0 si no
+    {
+
+      global $conexionbd;
+
+      $query="UPDATE Usuario SET Privilegios='$privilegios' WHERE Id='$id'";
+      if($conexionbd->query($query))
+      {
+        return 0;
+      }
+      else{
+        return -1;
+      }
+    }
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ?>

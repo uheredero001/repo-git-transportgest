@@ -4,7 +4,19 @@
 
     /////////////////////////////////FUNCIONES DE INSERCION/////////////////////////////////////////////////////////
 
+    function insertLugarDescarga($nombre,$direccion,$poblacion,$provincia,$hinicio,$hfin)//Devuelve 0 si todo va bien y /=0 si no
+    {
+      global $conexionbd;
 
+      $query="INSERT INTO `LugarDescarga`(`Nombre`, `Direccion`, `Población`, `Provincia`, `HInicio`, `HFin`)
+              VALUES ('$nombre','$direccion','$poblacion','$provincia','$hinicio','$hfin')";
+      if($conexionbd->query($query)){
+        return 0;
+      }
+      else{
+        return -1;
+      }
+    }
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -47,6 +59,23 @@
 
 
     /////////////////////////////////FUNCIONES DE ACTUALIZACION/////////////////////////////////////////////////////
+
+    function updateAllLugarDescarga($id,$nombre,$direccion,$poblacion,$provincia,$hinicio,$hfin)
+    {
+      global $conexionbd;
+
+      $query="UPDATE `LugarDescarga` SET `Nombre`='$nombre',`Direccion`='$direccion',`Población`='$poblacion',
+                      `Provincia`='$provincia',`HInicio`='$hinicio',`HFin`='$hfin' WHERE `Id`='$id'";
+
+      if($conexionbd->query($query)){
+        return 0;
+      }
+      else
+      {
+        return -1;
+      }
+
+    }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ?>
