@@ -29,16 +29,16 @@
                   <input type="text"  class="form-control" placeholder="Nick * (Debe ser único)" value="" name="nick" id="nick" />
               </div>
               <div class="form-group">
-                  <input type="password" class="form-control" placeholder="Contraseña *" value="" name="password" id="password"/>
+                  <input type="password" class="form-control" placeholder="Contraseña (6 o más caracteres) *" value="" pattern=".{6,}" name="password" id="password"/>
               </div>
               <div class="form-group">
-                  <input type="password" class="form-control" placeholder="Confirme Contraseña *" value="" name="confirm-password" id="confirm-password"/>
+                  <input type="password" class="form-control" placeholder="Confirme Contraseña *" value="" pattern=".{6,}" name="confirm-password" id="confirm-password"/>
               </div>
               <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Nombre *" value="" name="nombre" id="nombre"/>
+                  <input type="text" class="form-control" placeholder="Nombre *" required value="" name="nombre" id="nombre"/>
               </div>
               <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Apellidos *" value="" name="Apellidos" id="Apellidos"/>
+                  <input type="text" class="form-control" placeholder="Apellidos *" required value="" name="apellidos" id="apellidos"/>
               </div>
               <div class="form-group">
                 <select id="privilegios" name="privilegios" class="form-control">
@@ -50,6 +50,9 @@
                   <input type="submit" align="center" class="btn-lg btn-success" value="Añadir Usuario" />
               </div>
           </form>
+          <?php
+            include "/Applications/MAMP/htdocs/transportgest/LOGICA/añadirUsuario.php";
+          ?>
         </div>
         <div class="col-sm-4"></div>
       </div>
@@ -58,6 +61,3 @@
   </body>
 
 </html>
-
-<?php
-?>

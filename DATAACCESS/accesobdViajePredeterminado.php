@@ -28,7 +28,7 @@
     {
       global $conexionbd;
 
-      $query = "SELECT * FROM LugarDescarga WHERE Nombre='$nombre' AND Direccion='$direccion'";
+      $query = "SELECT * FROM LugarDescarga WHERE Id='$id'";
       $resultado=$conexionbd->query($query);
       return $resultado;
     }

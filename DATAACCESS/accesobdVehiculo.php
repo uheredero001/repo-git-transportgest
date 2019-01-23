@@ -82,5 +82,109 @@
     }
 
 
+    function updateTipo($id,$tipo)//Devuelve 0 si todo va bien y /=0 si n
+    {
+      global $conexionbd;
+
+      $query="UPDATE `Vehiculo` SET `Tipo`='$tipo' WHERE `Id`='$id'";
+
+      if($conexionbd->query($query)){
+        return 0;
+      }
+      else{
+        return -1;
+      }
+    }
+
+
+    function updateRemolque($id,$remolque)//Devuelve 0 si todo va bien y /=0 si n
+    {
+      global $conexionbd;
+
+      $query="UPDATE `Vehiculo` SET `Remolque`='$remolque' WHERE `Id`='$id'";
+
+      if($conexionbd->query($query)){
+        return 0;
+      }
+      else{
+        return -1;
+      }
+    }
+
+
+    function updateProximaItv($id,$proximaitv)//Devuelve 0 si todo va bien y /=0 si n
+    {
+      global $conexionbd;
+
+      $query="UPDATE `Vehiculo` SET `ProximaItv`='$proximaitv' WHERE `Id`='$id'";
+
+      if($conexionbd->query($query)){
+        return 0;
+      }
+      else{
+        return -1;
+      }
+    }
+
+
+    function updateProximaItvRemolque($id,$proximaitvremolque)//Devuelve 0 si todo va bien y /=0 si n
+    {
+      global $conexionbd;
+
+      $query="UPDATE `Vehiculo` SET `ProximaItvRemolque`='$proximaitvremolque' WHERE `Id`='$id'";
+
+      if($conexionbd->query($query)){
+        return 0;
+      }
+      else{
+        return -1;
+      }
+    }
+
+
+    function updateCapacidad($id,$capacidad)//Devuelve 0 si todo va bien y /=0 si n
+    {
+      global $conexionbd;
+
+      $query="UPDATE `Vehiculo` SET `Capacidad`='$capacidad' WHERE `Id`='$id'";
+
+      if($conexionbd->query($query)){
+        return 0;
+      }
+      else{
+        return -1;
+      }
+    }
+
+    function updateNTelefono($id,$telefono)//Devuelve 0 si todo va bien y /=0 si n
+    {
+      global $conexionbd;
+
+      $query="UPDATE `Vehiculo` SET `Telefono`='$telefono' WHERE `Id`='$id'";
+
+      if($conexionbd->query($query)){
+        return 0;
+      }
+      else{
+        return -1;
+      }
+    }
+
+
+    function updateEmail($id,$email)//Devuelve 0 si todo va bien y /=0 si n
+    {
+      global $conexionbd;
+
+      $query="UPDATE `Vehiculo` SET `Email`='$email' WHERE `Id`='$id'";
+
+      if($conexionbd->query($query)){
+        return 0;
+      }
+      else{
+        return -1;
+      }
+    }
+
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ?>

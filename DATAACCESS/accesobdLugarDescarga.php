@@ -77,5 +77,39 @@
 
     }
 
+
+    function updateHInicio($id,$hinicio)
+    {
+      global $conexionbd;
+
+      $query="UPDATE `LugarDescarga` SET `HInicio`='$hinicio' WHERE `Id`='$id'";
+
+      if($conexionbd->query($query)){
+        return 0;
+      }
+      else
+      {
+        return -1;
+      }
+
+    }
+
+
+    function updateHFin($id,$hfin)
+    {
+      global $conexionbd;
+
+      $query="UPDATE `LugarDescarga` SET `HFin`='$hfin' WHERE `Id`='$id'";
+
+      if($conexionbd->query($query)){
+        return 0;
+      }
+      else
+      {
+        return -1;
+      }
+
+    }
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ?>

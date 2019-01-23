@@ -6,18 +6,15 @@
     function insertUser($nick,$password,$privilegios,$nombre,$apellidos)//Devuelve 0 si todo va bien y /=0 si no
     {
       global $conexionbd;
-      $insert ="INSERT INTO `Usuario`(`Nick`, `Password`, `Nombre`, `Apellidos`, `Privilegios`, `FechaUltAcceso`)
-                VALUES ('$nick','$password','$privilegios','$nombre','$apellidos',NULL)";
+      $query ="INSERT INTO `Usuario`(`Nick`, `Password`, `Nombre`, `Apellidos`, `Privilegios`, `FechaUltAcceso`)
+                VALUES ('$nick','$password','$nombre','$apellidos','$privilegios',NULL)";
       if($conexionbd->query($query))
       {
         return 0;
       }
 
         return -1;
-
-
     }
-
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -95,6 +92,54 @@
 
 
     /////////////////////////////////FUNCIONES DE ACTUALIZACION/////////////////////////////////////////////////////
+
+    function updateAllUsuario($id,$password,$nombre,$apellidos,$privilegios,$fecha)//Devuelve 0 si va todo bien y /=0 si no
+    {
+      global $conexionbd;
+
+      $query="UPDATE Usuario SET Password='$password', Nombre='$nombre', Apellidos='$apellidos', Privilegios='$privilegios',
+                                  FechaUltAcceso='$fecha' WHERE Id='$id'";
+      if($conexionbd->query($query))
+      {
+        return 0;
+      }
+      else{
+        return -1;
+      }
+    }
+
+
+    function updateNombre($id,$nombre)//Devuelve 0 si va todo bien y /=0 si no
+    {
+
+      global $conexionbd;
+
+      $query="UPDATE Usuario SET Nombre='$nombre' WHERE Id='$id'";
+      if($conexionbd->query($query))
+      {
+        return 0;
+      }
+      else{
+        return -1;
+      }
+    }
+
+
+    function updateApellidos($id,$apellidos)//Devuelve 0 si va todo bien y /=0 si no
+    {
+
+      global $conexionbd;
+
+      $query="UPDATE Usuario SET Apellidos='$apellidos' WHERE Id='$id'";
+      if($conexionbd->query($query))
+      {
+        return 0;
+      }
+      else{
+        return -1;
+      }
+    }
+
 
     function updatePassword($id,$password)//Devuelve 0 si va todo bien y /=0 si no
     {
