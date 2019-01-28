@@ -9,7 +9,7 @@
 
     <script src="../SCRIPTS/includehtml.js"></script>
 
-    <title> Dar de baja Vehiculo</title>
+    <title> Dar de alta Trabajador</title>
   </head>
 
   <body>
@@ -26,28 +26,28 @@
           <h3>Introduzca los datos</h3>
           <form method="post">
               <div class="form-group">
-                  Seleccione el vehiculo al que quiere dar de baja:
-                    <select id="vehiculo" class="form-control" name="vehiculo">
+                  Seleccione el trabajador al que quiere dar de alta:
+                    <select id="trabajador" class="form-control" name="trabajador">
                       <?php
-                        include "/Applications/MAMP/htdocs/transportgest/DATAACCESS/accesobdVehiculo.php";
-                        $vehiculos=getVehicles();
-                        for ($i=0;$i<mysqli_num_rows($vehiculos);$i++)
+                        include "/Applications/MAMP/htdocs/transportgest/DATAACCESS/accesobdTrabajador.php";
+                        $trabajadores=getWorkersDni();
+                        for ($i=0;$i<mysqli_num_rows($trabajadores);$i++)
                         {
-                          $matricula=mysqli_fetch_row($vehiculos);
-                          $info=getVehicleInfo($matricula[0]);
-                          echo '<option value="'.$info[1].'">'.$info[1].'</option>';
+                          $dni=mysqli_fetch_row($trabajadores);
+                          $info=getWorkerInfo($dni[0]);
+                          echo '<option value="'.$info[1].'">'.$info[1].' - '.$info[2].' '.$info[3].'</option>';
                         }
                       ?>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <input type="submit" class="btn btn-lg btn-danger" value="Dar de baja"></input>
+                    <input type="submit" class="btn btn-lg btn-success" value="Dar de alta"></input>
                 </div>
           </form>
           <?php
-            include "/Applications/MAMP/htdocs/transportgest/LOGICA/bajaVehiculo.php";
-          ?>
+            include "/Applications/MAMP/htdocs/transportgest/LOGICA/altaTrabajador.php";
+           ?>
         </div>
         <div class="col-sm-4"></div>
       </div>
@@ -56,6 +56,3 @@
   </body>
 
 </html>
-
-<?php
-?>

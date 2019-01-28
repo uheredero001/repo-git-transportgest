@@ -10,9 +10,9 @@
       global $conexionbd;
 
       $query="INSERT INTO `Vehiculo`( `Matricula`, `Tipo`, `Remolque`, `AñoMatriculacion`, `ProximaItv`,
-                                    `ProximaItvRemolque`, `Capacidad`, `NTelefono`, `Email`)
+                                    `ProximaItvRemolque`, `Capacidad`, `NTelefono`, `Email`,`EnCirculacion`)
                             VALUES ('$matricula','$tipo','$remolque','$añomatriculacion','$proximaitv','$proximaitvremolque',
-                                    '$capacidad','$telefono','$email')";
+                                    '$capacidad','$telefono','$email','Si')";
       if($conexionbd->query($query)){
         return 0;
       }
@@ -52,7 +52,7 @@
     {
       global $conexionbd;
 
-      $query = "SELECT Matricula FROM Vehiculo";
+      $query = "SELECT `Matricula` FROM `Vehiculo`";
       $resultado=$conexionbd->query($query);
       return $resultado;
     }
@@ -65,13 +65,14 @@
 
     /////////////////////////////////FUNCIONES DE ACTUALIZACION/////////////////////////////////////////////////////
     function updateAllVehiculo($id,$matricula,$tipo,$remolque,$añomatriculacion,$proximaitv,$proximaitvremolque,
-                              $capacidad,$telefono,$email)//Devuelve 0 si todo va bien y /=0 si n
+                              $capacidad,$telefono,$email,$enCirculacion)//Devuelve 0 si todo va bien y /=0 si n
     {
       global $conexionbd;
 
       $query="UPDATE `Vehiculo` SET `Matricula`='$matricula',`Tipo`='$tipo',`Remolque`='$remolque',`AñoMatriculacion`='$añomatriculacion',
                                     `ProximaItv`='$proximaitv',`ProximaItvRemolque`='$proximaitvremolque',
-                                    `Capacidad`='$capacidad',`NTelefono`='$telefono',`Email`='$email' WHERE `Id`='$id'";
+                                    `Capacidad`='$capacidad',`NTelefono`='$telefono',`Email`='$email',`EnCirculacion`='$enCirculacion'
+                                    WHERE `Id`='$id'";
 
       if($conexionbd->query($query)){
         return 0;
@@ -176,6 +177,20 @@
       global $conexionbd;
 
       $query="UPDATE `Vehiculo` SET `Email`='$email' WHERE `Id`='$id'";
+
+      if($conexionbd->query($query)){
+        return 0;
+      }
+      else{
+        return -1;
+      }
+    }
+
+    function updateEnCirculacion($id,$enCirculacion)//Devuelve 0 si todo va bien y /=0 si n
+    {
+      global $conexionbd;
+
+      $query="UPDATE `Vehiculo` SET `EnCirculacion`='$enCirculacion' WHERE `Id`='$id'";
 
       if($conexionbd->query($query)){
         return 0;

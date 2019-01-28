@@ -26,22 +26,26 @@
           <h3>Introduzca los datos</h3>
           <form id="nuevoTrabajador" method="post">
               <div class="form-group">
-                  <input type="text"  class="form-control" placeholder="Dni *" value="" name="dni" id="dni" />
+                  <input type="text"  class="form-control" placeholder="Dni *" pattern="[0-9]{3}[A-Z]"value="" required name="dni" id="dni" />
               </div>
               <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Nombre *" value="" name="nombre" id="nombre"/>
+                  <input type="text" class="form-control" minlength="3" placeholder="Nombre *" value="" name="nombre" required id="nombre"/>
               </div>
               <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Apellidos *" value="" name="apellidos" id="apellidos"/>
+                  <input type="text" class="form-control" minlength="3" placeholder="Apellidos *" value="" required name="apellidos" id="apellidos"/>
               </div>
               <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Puesto de trabajo *" value="" name="puesto" id="puesto"/>
+                  <input type="text" class="form-control" minlength="3" placeholder="Puesto de trabajo *" required value="" name="puesto" id="puesto"/>
               </div>
               <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Telefono *" value="" name="telefono" id="telefono"/>
+                  <input type="text" class="form-control" placeholder="Telefono *" required value="" pattern="[6-7]{1}[0-9]{2}-[0-9]{3}-[0-9]{3}" name="telefono" id="telefono"/>
               </div>
               <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Estado (Alta Laboral / Baja Medica / Baja Laboral) *" value="" name="estado" id="estado"/>
+                <select id="estado" name="estado" class="form-control">
+                    <option value="Baja Laboral">Baja Laboral</option>
+                    <option value="Alta Laboral">Alta Laboral</option>
+                    <option value="Baja Medica">Baja Medica</option>
+                </select>
               </div>
               <div class="form-group" >
                   <input type="submit"  class="btn-lg btn-success" value="Añadir Trabajador" />

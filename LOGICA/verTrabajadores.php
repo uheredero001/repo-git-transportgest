@@ -11,6 +11,7 @@
     echo                "<th> Apellidos </th>";
     echo                "<th> Puesto Trabajo</th>";
     echo                "<th> Telf Personal</th>";
+    echo                "<th> Estado</th>";
     echo            "</tr>";
     echo        "</thead>";
     echo        "<tbody>";
@@ -28,6 +29,7 @@
         echo            "<th>". $info[3]. "</th>";
         echo            "<th>". $info[4]. "</th>";
         echo            "<th>". $info[5]. "</th>";
+        echo            "<th>". $info[6]. "</th>";
         echo        "</tr>";
     }
 

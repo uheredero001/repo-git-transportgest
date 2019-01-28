@@ -82,7 +82,7 @@
     {
       global $conexionbd;
 
-      $query="UPDATE `Trabajador` SET `Estado`='$estado', WHERE `Id`='$id'";
+      $query="UPDATE `Trabajador` SET `Estado`='$estado' WHERE `Id`='$id'";
 
       if($conexionbd->query($query)){
         return 0;
@@ -98,7 +98,7 @@
     {
       global $conexionbd;
 
-      $query="UPDATE `Trabajador` SET `TelfPersonal`='$telefono', WHERE `Id`='$id'";
+      $query="UPDATE `Trabajador` SET `TelfPersonal`='$telefono' WHERE `Id`='$id'";
 
       if($conexionbd->query($query)){
         return 0;
@@ -114,7 +114,7 @@
     {
       global $conexionbd;
 
-      $query="UPDATE `Trabajador` SET `PuestoTrabajo`='$puesto', WHERE `Id`='$id'";
+      $query="UPDATE `Trabajador` SET `PuestoTrabajo`='$puesto' WHERE `Id`='$id'";
 
       if($conexionbd->query($query)){
         return 0;

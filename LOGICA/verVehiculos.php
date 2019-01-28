@@ -8,11 +8,14 @@
     echo                "<th> Id </th>";
     echo                "<th> Matricula </th>";
     echo                "<th> Tipo </th>";
+    echo                "<th> Remolque </th>";
     echo                "<th> Año Matriculacion </th>";
     echo                "<th> Proxima Itv </th>";
+    echo                "<th> Proxima Itv Remolque</th>";
     echo                "<th> Capacidad </th>";
     echo                "<th> Telefono </th>";
     echo                "<th> Email </th>";
+    echo                "<th> En Circulacion </th>";
     echo            "</tr>";
     echo        "</thead>";
     echo        "<tbody>";
@@ -32,6 +35,9 @@
         echo            "<th>". $info[5]. "</th>";
         echo            "<th>". $info[6]. "</th>";
         echo            "<th>". $info[7]. "</th>";
+        echo            "<th>". $info[8]. "</th>";
+        echo            "<th>". $info[9]. "</th>";
+        echo            "<th>". $info[10]. "</th>";
         echo        "</tr>";
     }
 

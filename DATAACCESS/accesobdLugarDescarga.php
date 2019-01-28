@@ -24,11 +24,11 @@
 
     /////////////////////////////////FUNCIONES DE CONSULTA//////////////////////////////////////////////////////////
 
-    function existLugarDescarga ($nombre,$direccion) //Devuelve 0 si no existe y /=0 si existe
+    function existLugarDescarga ($nombre) //Devuelve 0 si no existe y /=0 si existe
     {
       global $conexionbd;
 
-      $query = "SELECT Nombre FROM LugarDescarga WHERE Nombre='$nombre' AND Direccion='$direccion'";
+      $query = "SELECT Nombre FROM LugarDescarga WHERE Nombre='$nombre'";
       $resultado=$conexionbd->query($query);
       return mysqli_num_rows($resultado);
     }

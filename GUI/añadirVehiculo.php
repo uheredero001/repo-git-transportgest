@@ -22,7 +22,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-4"></div>
-        <div class="col-sm-4">
+        <div class="col-sm-4" align="center">
           <h3 align="center">Introduzca los datos</h3>
           <form id="nuevoVehiculo" method="post">
               <div class="form-group">
@@ -54,7 +54,7 @@
                   <input type="number" min="1" max="60" class="form-control" placeholder="Capacidad en palets *" value="" name="capacidad" id="capacidad"/>
               </div>
               <div class="form-group">
-                <input type="tel" id="phone" class="form-control" placeholder="Telefono 6XX-XXX-XXX / 7XX-XXX-XXX*"name="telefono" id="telefono" pattern="[6-7]{1}[0-9]{2}-[0-9]{3}-[0-9]{3}" required>
+                <input type="tel" id="phone" class="form-control" placeholder="Telefono 6XXXXXXXX / 7XXXXXXXX*"name="telefono" id="telefono" pattern="[6-7]{1}[0-9]{8}" required>
               </div>
               <div class="form-group">
                   <input type="email"  class="form-control" placeholder="Email *" value="" name="email" id="email" />
@@ -63,6 +63,9 @@
                   <input type="submit" align="center" class="btn-lg btn-success" value="Añadir Vehiculo" />
               </div>
           </form>
+          <?php
+            include "/Applications/MAMP/htdocs/transportgest/LOGICA/añadirVehiculo.php";
+          ?>
         </div>
         <div class="col-sm-4"></div>
       </div>
@@ -71,6 +74,3 @@
   </body>
 
 </html>
-
-<?php
-?>
