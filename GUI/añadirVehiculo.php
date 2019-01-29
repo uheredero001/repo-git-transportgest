@@ -37,7 +37,7 @@
                 </select>
               </div>
               <div class="form-group">
-                  <input type="password" class="form-control" placeholder="Remolque (dejar en blanco si no tiene) *" value="" name="remolque" id="remolque"/>
+                  <input type="text" class="form-control" placeholder="Remolque (dejar en blanco si no tiene) *" value="" name="remolque" id="remolque"/>
               </div>
               <div class="form-group">
                   <input type="number" min="1980" max="2100" class="form-control" placeholder="Año Matriculacion Vehiculo*" value="" name="matriculacion" id="matriculacion"/>

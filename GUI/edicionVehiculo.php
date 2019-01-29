@@ -23,7 +23,15 @@
       <div class="row">
         <div class="col-sm-4"></div>
         <div class="col-sm-4">
-
+          <p><a href="editarMatriculaVehiculo.php"><button type="button" class="btn btn-success btn-lg"> Cambiar Matricula</button></a></p>
+          <p><a href="editarTipoVehiculo.php"><button type="button" class="btn btn-warning btn-lg"> Cambiar Tipo </button></a></p>
+          <p><a href="editarRemolqueVehiculo.php"><button type="button" class="btn btn-danger btn-lg"> Cambiar Remolque </button></a></p>
+          <p><a href="editarMatriculacionVehiculo.php"><button type="button" class="btn btn-primary btn-lg"> Cambiar Año Matriculacion </button></a></p>
+          <p><a href="editarProximaItvVehiculo.php"><button type="button" class="btn btn-info btn-lg"> Cambiar Proxima Itv </button></a></p>
+          <p><a href="editarProximaItvRemolqueVehiculo.php"><button type="button" class="btn btn-success btn-lg"> Cambiar Proxima Itv Remolque</button></a></p>
+          <p><a href="editarCapacidadVehiculo.php"><button type="button" class="btn btn-warning btn-lg"> Cambiar Capacidad </button></a></p>
+          <p><a href="editarEmailVehiculo.php"><button type="button" class="btn btn-danger btn-lg"> Cambiar Email </button></a></p>
+          <p><a href="editarTelefonoVehiculo.php"><button type="button" class="btn btn-primary btn-lg"> Cambiar Telefono </button></a></p>
         </div>
         <div class="col-sm-4"></div>
       </div>

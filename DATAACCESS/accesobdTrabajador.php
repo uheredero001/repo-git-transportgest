@@ -77,6 +77,21 @@
 
     }
 
+    function updateDni($id,$dni)//Devuelve 0 si todo va bien y /=0 si no
+    {
+      global $conexionbd;
+
+      $query="UPDATE `Trabajador` SET `Dni`='$dni' WHERE `Id`='$id'";
+
+      if($conexionbd->query($query)){
+        return 0;
+      }
+      else{
+        return -1;
+      }
+
+    }
+
 
     function updateEstado($id,$estado)//Devuelve 0 si todo va bien y /=0 si no
     {
@@ -93,6 +108,36 @@
 
     }
 
+    function updateNombre($id,$nombre)//Devuelve 0 si todo va bien y /=0 si no
+    {
+      global $conexionbd;
+
+      $query="UPDATE `Trabajador` SET `Nombre`='$nombre' WHERE `Id`='$id'";
+
+      if($conexionbd->query($query)){
+        return 0;
+      }
+      else{
+        return -1;
+      }
+
+    }
+
+
+    function updateApellidos($id,$apellidos)//Devuelve 0 si todo va bien y /=0 si no
+    {
+      global $conexionbd;
+
+      $query="UPDATE `Trabajador` SET `Apellidos`='$apellidos' WHERE `Id`='$id'";
+
+      if($conexionbd->query($query)){
+        return 0;
+      }
+      else{
+        return -1;
+      }
+
+    }
 
     function updateTelefono($id,$telefono)//Devuelve 0 si todo va bien y /=0 si no
     {

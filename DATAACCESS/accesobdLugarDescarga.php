@@ -78,6 +78,73 @@
     }
 
 
+    function updateNombre($id,$nombre)
+    {
+      global $conexionbd;
+
+      $query="UPDATE `LugarDescarga` SET `Nombre`='$nombre' WHERE `Id`='$id'";
+
+      if($conexionbd->query($query)){
+        return 0;
+      }
+      else
+      {
+        return -1;
+      }
+
+    }
+
+
+    function updateDireccion($id,$direccion)
+    {
+      global $conexionbd;
+
+      $query="UPDATE `LugarDescarga` SET `Direccion`='$direccion' WHERE `Id`='$id'";
+
+      if($conexionbd->query($query)){
+        return 0;
+      }
+      else
+      {
+        return -1;
+      }
+
+    }
+
+
+    function updatePoblacion($id,$poblacion)
+    {
+      global $conexionbd;
+
+      $query="UPDATE `LugarDescarga` SET `Poblacion`='$poblacion' WHERE `Id`='$id'";
+
+      if($conexionbd->query($query)){
+        return 0;
+      }
+      else
+      {
+        return -1;
+      }
+
+    }
+
+    function updateProvincia($id,$provincia)
+    {
+      global $conexionbd;
+
+      $query="UPDATE `LugarDescarga` SET `Provincia`='$provincia' WHERE `Id`='$id'";
+
+      if($conexionbd->query($query)){
+        return 0;
+      }
+      else
+      {
+        return -1;
+      }
+
+    }
+
+
     function updateHInicio($id,$hinicio)
     {
       global $conexionbd;

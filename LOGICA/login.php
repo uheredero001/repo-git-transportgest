@@ -13,6 +13,8 @@
           $_SESSION['user']=$usuario;
           $_SESSION['password']=$password;
         }
+        $info=getUserinfo($usuario);
+        updateFechaUltAcceso($info[0],date("Y-m-d"));
         header("Location:home.php");
         exit;
       }

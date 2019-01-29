@@ -23,7 +23,12 @@
       <div class="row">
         <div class="col-sm-4"></div>
         <div class="col-sm-4">
-
+          <p><a href="editarNombrePuntoDescarga.php"><button type="button" class="btn btn-success btn-lg"> Cambiar Nombre</button></a></p>
+          <p><a href="editarDireccionPuntoDescarga.php"><button type="button" class="btn btn-warning btn-lg"> Cambiar Direccion </button></a></p>
+          <p><a href="editarPoblacionPuntoDescarga.php"><button type="button" class="btn btn-danger btn-lg"> Cambiar Poblacion </button></a></p>
+          <p><a href="editarProvinciaPuntoDescarga.php"><button type="button" class="btn btn-primary btn-lg"> Cambiar Provincia </button></a></p>
+          <p><a href="editarHinicioPuntoDescarga.php"><button type="button" class="btn btn-info btn-lg"> Cambiar Hora Inicio </button></a></p>
+          <p><a href="editarHfinPuntoDescarga.php"><button type="button" class="btn btn-success btn-lg"> Cambiar Hora Fin </button></a></p>
         </div>
         <div class="col-sm-4"></div>
       </div>

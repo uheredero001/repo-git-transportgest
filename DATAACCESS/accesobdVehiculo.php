@@ -83,6 +83,21 @@
     }
 
 
+    function updateMatricula($id,$matricula)//Devuelve 0 si todo va bien y /=0 si n
+    {
+      global $conexionbd;
+
+      $query="UPDATE `Vehiculo` SET `Matricula`='$matricula' WHERE `Id`='$id'";
+
+      if($conexionbd->query($query)){
+        return 0;
+      }
+      else{
+        return -1;
+      }
+    }
+
+
     function updateTipo($id,$tipo)//Devuelve 0 si todo va bien y /=0 si n
     {
       global $conexionbd;
@@ -172,6 +187,21 @@
     }
 
 
+    function updateMatriculacion($id,$matriculacion)//Devuelve 0 si todo va bien y /=0 si n
+    {
+      global $conexionbd;
+
+      $query="UPDATE `Vehiculo` SET `AñoMatriculacion`='$matriculacion' WHERE `Id`='$id'";
+
+      if($conexionbd->query($query)){
+        return 0;
+      }
+      else{
+        return -1;
+      }
+    }
+
+
     function updateEmail($id,$email)//Devuelve 0 si todo va bien y /=0 si n
     {
       global $conexionbd;
@@ -185,6 +215,21 @@
         return -1;
       }
     }
+
+    function updateTelefono($id,$telefono)//Devuelve 0 si todo va bien y /=0 si n
+    {
+      global $conexionbd;
+
+      $query="UPDATE `Vehiculo` SET `NTelefono`='$telefono' WHERE `Id`='$id'";
+
+      if($conexionbd->query($query)){
+        return 0;
+      }
+      else{
+        return -1;
+      }
+    }
+
 
     function updateEnCirculacion($id,$enCirculacion)//Devuelve 0 si todo va bien y /=0 si n
     {

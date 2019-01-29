@@ -3,7 +3,7 @@
     {
         $matricula=$_POST['vehiculo'];
 
-        if(existVehicle($matricula)>0)
+        if(existVehicle($matricul)>0)
         {
           $info=getVehicleInfo($matricula);
           if(updateEnCirculacion($info[0],"Si")==0)
