@@ -23,6 +23,10 @@
       <div class="row">
         <div class="col-sm-4"></div>
         <div class="col-sm-4">
+          <p><a href="editarPasswordUsuario.php"><button type="button" class="btn btn-success btn-lg"> Cambiar Password</button></a></p>
+          <p><a href="editarNombreUsuario.php"><button type="button" class="btn btn-warning btn-lg"> Cambiar Nombre </button></a></p>
+          <p><a href="editarApellidosUsuario.php"><button type="button" class="btn btn-danger btn-lg"> Cambiar Apellidos </button></a></p>
+          <p><a href="editarPrivilegiosUsuario.php"><button type="button" class="btn btn-primary btn-lg"> Cambiar Privilegios </button></a></p>
 
         </div>
         <div class="col-sm-4"></div>

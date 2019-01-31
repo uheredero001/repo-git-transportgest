@@ -47,6 +47,9 @@
                     <input type="submit" align="center" class="btn-lg btn-success" value="Añadir Punto" />
                 </div>
             </form>
+            <?php
+              include "/Applications/MAMP/htdocs/transportgest/LOGICA/añadirPuntoDescarga.php";  
+            ?>
         </div>
         <div class="col-sm-4"></div>
       </div>

@@ -1,10 +1,10 @@
 <?php
     include "/Applications/MAMP/htdocs/transportgest/DATAACCESS/accesobdLugarDescarga.php";
 
-    if (isset($_POST['nombre'])&&isset($_POST['direccion'])&&isset($_POST['poblacion'])&&isset($_POST['provincia'])
+    if (isset($_POST['nombrePunto'])&&isset($_POST['direccion'])&&isset($_POST['poblacion'])&&isset($_POST['provincia'])
           &&isset($_POST['hinicio'])&&isset($_POST['hfin']))
     {
-      $nombre=$_POST['nombre'];
+      $nombre=$_POST['nombrePunto'];
       $direccion=$_POST['direccion'];
       $poblacion=$_POST['poblacion'];
       $provincia=$_POST['provincia'];
