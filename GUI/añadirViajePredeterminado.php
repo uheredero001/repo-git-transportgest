@@ -148,6 +148,9 @@
                   <input type="submit" align="center" class="btn-lg btn-success" value="Añadir Viaje Predeterminado" />
               </div>
           </form>
+          <?php
+            include "/Applications/MAMP/htdocs/transportgest/LOGICA/añadirViajePredeterminado.php";
+          ?>
         </div>
         <div class="col-sm-4"></div>
       </div>
