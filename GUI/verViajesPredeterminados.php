@@ -13,7 +13,20 @@
   </head>
 
   <body>
-    <div w3-include-html="menuampliado.html"></div>
+    <?php
+      session_start();
+      include "/Applications/MAMP/htdocs/transportgest/DATAACCESS/accesobdUsuario.php";
+
+      if(esAdmin($_SESSION['user']))
+      {
+        $_SESSION['privilegios']="admin";
+        echo '<div w3-include-html="menuampliado.html"></div>';
+      }
+      else {
+        $_SESSION['privilegios']="normal";
+        echo '<div w3-include-html="menulimitado.html"></div>';
+      }
+     ?>
     <script>
       includeHTML();
     </script>
