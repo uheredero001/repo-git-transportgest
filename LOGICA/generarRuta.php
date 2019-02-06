@@ -28,10 +28,11 @@ if (isset($_SESSION['datosRuta']))
   }
   echo        "</tbody>";
   echo "</table>";
+  $_SESSION['tiendasRuta']=$tiendas;
+  $_SESSION['volumetriasRuta']=$volumetrias;
 }
 unset($_SESSION['datosRuta']);
-$_SESSION['tiendasRuta']=$tiendas;
-$_SESSION['volumetriasRuta']=$volumetrias;
+
 
 
 
