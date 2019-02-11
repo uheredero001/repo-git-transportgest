@@ -34,6 +34,6 @@ if (isset($_SESSION['datosRuta']))
 unset($_SESSION['datosRuta']);
 
 
-
+include "/Applications/MAMP/htdocs/transportgest/LOGICA/distribuirCargasRuta.php";
 
 ?>

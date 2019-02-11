@@ -57,6 +57,15 @@
       return $resultado;
     }
 
+    function getVehiclesInCirculation()// Devuelve un array con la matricula y la capacidad de los vehiculos en circulacion
+    {
+      global $conexionbd;
+
+      $query = "SELECT `Matricula`,`Capacidad` FROM `Vehiculo` WHERE `EnCirculacion`='Si' ";
+      $resultado=$conexionbd->query($query);
+      return $resultado;
+    }
+
 
 
 
