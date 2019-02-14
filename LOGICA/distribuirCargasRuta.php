@@ -83,14 +83,12 @@ if (isset($_SESSION['tiendasRuta'])&&isset($_SESSION['volumetriasRuta']))
 
 
 
-
-
-
   //Distribuimos cargas en los camiones que esten en Circulacion (algoritmo)
   $ruta=array();
   $contadorRuta=0;
   for($i=0;$i<count($viajesPredeterminados);$i++)
   {
+
     if(estaViajePredeterminadoEnRuta($tiendas,$viajesPredeterminados[$i][2],$viajesPredeterminados[$i][3],$viajesPredeterminados[$i][4],
                                   $viajesPredeterminados[$i][5],$viajesPredeterminados[$i][6],$viajesPredeterminados[$i][7],$viajesPredeterminados[$i][8]))
       {
@@ -144,7 +142,6 @@ if (isset($_SESSION['tiendasRuta'])&&isset($_SESSION['volumetriasRuta']))
           unset($tiendas[$valorBusqueda]);
           unset($volumetrias[$valorBusqueda]);
         }
-
         $ruta[$contadorRuta]=array($viajesPredeterminados[$i][1],array($viajesPredeterminados[$i][2],$volumetria1),
                     array($viajesPredeterminados[$i][3],$volumetria2),array($viajesPredeterminados[$i][4],$volumetria3),
                     array($viajesPredeterminados[$i][5],$volumetria4),array($viajesPredeterminados[$i][6],$volumetria5),
@@ -155,74 +152,6 @@ if (isset($_SESSION['tiendasRuta'])&&isset($_SESSION['volumetriasRuta']))
         $volumetrias=array_values($volumetrias);
       }
   }
-
-  for($i=0;$i<count($viajesPredeterminados);$i++)
-  {
-    if(estaViajePredeterminadoEnRuta($tiendas,$viajesPredeterminados[$i][2],$viajesPredeterminados[$i][3],$viajesPredeterminados[$i][4],
-                                  $viajesPredeterminados[$i][5],$viajesPredeterminados[$i][6],$viajesPredeterminados[$i][7],$viajesPredeterminados[$i][8]))
-      {
-        $volumetria1=0;
-        $volumetria2=0;
-        $volumetria3=0;
-        $volumetria4=0;
-        $volumetria5=0;
-        $volumetria6=0;
-        $volumetria7=0;
-
-        if(($valorBusqueda=array_search($viajesPredeterminados[$i][2],$tiendas))!==false)
-        {
-          $volumetria1=$volumetrias[$valorBusqueda];
-          unset($tiendas[$valorBusqueda]);
-          unset($volumetrias[$valorBusqueda]);
-        }
-        if(($valorBusqueda=array_search($viajesPredeterminados[$i][3],$tiendas))!==false)
-        {
-          $volumetria2=$volumetrias[$valorBusqueda];
-          unset($tiendas[$valorBusqueda]);
-          unset($volumetrias[$valorBusqueda]);
-        }
-        if(($valorBusqueda=array_search($viajesPredeterminados[$i][4],$tiendas))!==false)
-        {
-          $volumetria3=$volumetrias[$valorBusqueda];
-          unset($tiendas[$valorBusqueda]);
-          unset($volumetrias[$valorBusqueda]);
-        }
-        if(($valorBusqueda=array_search($viajesPredeterminados[$i][5],$tiendas))!==false)
-        {
-          $volumetria4=$volumetrias[$valorBusqueda];
-          unset($tiendas[$valorBusqueda]);
-          unset($volumetrias[$valorBusqueda]);
-        }
-        if(($valorBusqueda=array_search($viajesPredeterminados[$i][6],$tiendas))!==false)
-        {
-          $volumetria5=$volumetrias[$valorBusqueda];
-          unset($tiendas[$valorBusqueda]);
-          unset($volumetrias[$valorBusqueda]);
-        }
-        if(($valorBusqueda=array_search($viajesPredeterminados[$i][7],$tiendas))!==false)
-        {
-          $volumetria6=$volumetrias[$valorBusqueda];
-          unset($tiendas[$valorBusqueda]);
-          unset($volumetrias[$valorBusqueda]);
-        }
-        if(($valorBusqueda=array_search($viajesPredeterminados[$i][8],$tiendas))!==false)
-        {
-          $volumetria7=$volumetrias[$valorBusqueda];
-          unset($tiendas[$valorBusqueda]);
-          unset($volumetrias[$valorBusqueda]);
-        }
-
-        $ruta[$contadorRuta]=array($viajesPredeterminados[$i][1],array($viajesPredeterminados[$i][2],$volumetria1),
-                    array($viajesPredeterminados[$i][3],$volumetria2),array($viajesPredeterminados[$i][4],$volumetria3),
-                    array($viajesPredeterminados[$i][5],$volumetria4),array($viajesPredeterminados[$i][6],$volumetria5),
-                    array($viajesPredeterminados[$i][7],$volumetria6),array($viajesPredeterminados[$i][8],$volumetria7));
-        $contadorRuta++;
-
-        $tiendas=array_values($tiendas);
-        $volumetrias=array_values($volumetrias);
-      }
-  }
-
 
   echo '<h3> RUTA GENERADA:</h3>';
   echo "<table id='ruta' class='table table-striped'>";
@@ -264,7 +193,7 @@ if (isset($_SESSION['tiendasRuta'])&&isset($_SESSION['volumetriasRuta']))
       echo'<p>'.$tiendas[$i].'</p>';
     }
   }
-
+  $_SESSION['rutaGenerada']=$ruta;
   unset($_SESSION['tiendasRuta']);
   unset($_SESSION['volumetriasRuta']);
 }
