@@ -39,6 +39,7 @@
                 </div>
           </form>
           <?php
+            session_start();
             include "/Applications/MAMP/htdocs/transportgest/LOGICA/valorarRuta.php";
            ?>
         </div>

@@ -28,7 +28,6 @@
 
            }
           $_SESSION['datosRuta']=$datos;
-          echo '<h4> FICHERO CARGADO CORRECTAMENTE </h4>';
       }
       else{
           echo '<h3> HA HABIDO ALGUN ERROR EN LA CARGA DEL FICHERO </h3>';

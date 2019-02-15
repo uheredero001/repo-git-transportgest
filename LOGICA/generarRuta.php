@@ -21,18 +21,17 @@ unset($_SESSION['datosRuta']);
 
 /////GENERAMOS RUTA
 include "/Applications/MAMP/htdocs/transportgest/LOGICA/distribuirCargasRuta.php";
-
+include "/Applications/MAMP/htdocs/transportgest/LOGICA/guardarRuta.php";
 /////GUARDAMOS RUTA Y SU VALORACION
-if (isset($_SESSION['rutaGenerada']))
+if (isset($_SESSION['rutaGuardada']))
 {
-  include "/Applications/MAMP/htdocs/transportgest/LOGICA/guardarRuta.php";
 
-  //echo'<META HTTP-EQUIV="Refresh" CONTENT="5; URL=../GUI/valorarRuta.php">';
+  echo'<form method="post" action="../GUI/valorarRuta.php">
+        <div class="form-group">
+            <input type="submit" class="btn btn-lg btn-success" value="Continuar"></input>
+        </div>
+        </form>';
 
 }
-unset($_SESSION['rutaGenerada']);
-
-
-
 
 ?>

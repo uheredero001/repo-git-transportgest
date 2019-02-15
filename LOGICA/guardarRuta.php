@@ -16,7 +16,7 @@ if (isset($_SESSION['rutaGenerada']))
   {
     $ruta=$_SESSION['rutaGenerada'];
     $idRuta=getLasRuta();
-
+    $_SESSION['rutaGuardada']=$idRuta[0];
     for($i=0;$i<count($ruta);$i++)
     {
       $vehiculo=$ruta[$i][0];
@@ -31,8 +31,8 @@ if (isset($_SESSION['rutaGenerada']))
       {
         echo "<p> Ha ocurrido algun error con la base de datos.</p>";
         echo '<p>'.$vehiculo.' - '.$carga1.' - '.$carga2.' - '.$carga3.' - '.$carga4.' - '.$carga5.' - '.$carga6.' - '.$carga7.'</p>';
-        unset($_SESSION['rutaGenerada']);
       }
+      
     }
   }
   else {
