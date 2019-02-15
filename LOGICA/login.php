@@ -15,6 +15,7 @@
         }
         $info=getUserinfo($usuario);
         updateFechaUltAcceso($info[0],date("Y-m-d"));
+        $_SESSION['iduser']=$info[0];
         header("Location:home.php");
         exit;
       }

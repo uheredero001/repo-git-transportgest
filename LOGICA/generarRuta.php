@@ -27,13 +27,10 @@ if (isset($_SESSION['rutaGenerada']))
 {
   include "/Applications/MAMP/htdocs/transportgest/LOGICA/guardarRuta.php";
 
-
-
-  include "/Applications/MAMP/htdocs/transportgest/LOGICA/valorarRuta.php";
-
-  include "/Applications/MAMP/htdocs/transportgest/COMMUNICATIONS/enviarCorreosRuta.php"
+  //echo'<META HTTP-EQUIV="Refresh" CONTENT="5; URL=../GUI/valorarRuta.php">';
 
 }
+unset($_SESSION['rutaGenerada']);
 
 
 

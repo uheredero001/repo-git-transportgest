@@ -4,12 +4,12 @@ $fichero_credenciales ="credencialesbd.php";
 include $fichero_credenciales;
 
 /////////////////////////////////FUNCIONES DE INSERCION/////////////////////////////////////////////////////////
-function insertRuta($user,$date,$time,$valoration)
+function insertRuta($iduser,$user,$date,$time,$valoration)//Devuelve 0 en caso de ir bien y -1 en caso contrario
 {
     global $conexionbd;
+    $query="INSERT INTO `Ruta`(`Fecha`, `Hora`, `Valoracion`, `GeneradaPor`,`nombreUsuario`)
+                VALUES ('$date','$time','$valoration','$iduser','$user')";
 
-    $query="INSERT INTO `Ruta`(`Fecha`, `Hora`, `Valoracion`, `GeneradaPor`)
-                VALUES ('$date','$time','$valoration','$user')";
     if($conexionbd->query($query)){
       return 0;
     }
@@ -36,7 +36,7 @@ function getLasRuta()
 {
   global $conexionbd;
 
-  $query = "SELECT * FROM Ruta WHERE Id =(SELECT IDENT_CURRENT('Ruta')) ";
+  $query = "SELECT MAX(ID) From Ruta";
   $resultado=$conexionbd->query($query);
   $fila=mysqli_fetch_row($resultado);
   return $fila;
@@ -56,7 +56,18 @@ function getRutaInfo($id)
 
 
 /////////////////////////////////FUNCIONES DE ACTUALIZACION/////////////////////////////////////////////////////
+function updateValoracion($id,$valoracion)//Devuelve 0 en caso de ir bien y -1 en caso contrario
+{
+  global $conexionbd;
 
+  $query = "UPDATE Ruta SET Valoracion='$valoracion' WHERE Id =$id";
+  if($conexionbd->query($query)){
+    return 0;
+  }
+  else{
+    return -1;
+  }
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
