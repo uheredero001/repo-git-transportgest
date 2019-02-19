@@ -36,7 +36,7 @@
       <div class="row">
         <div class="col-sm-4"></div>
         <div class="col-sm-4">
-
+          <h3>Aqui aparecen las estadisticas</h3>
         </div>
         <div class="col-sm-4"></div>
       </div>

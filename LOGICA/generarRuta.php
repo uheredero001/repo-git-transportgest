@@ -22,6 +22,7 @@ unset($_SESSION['datosRuta']);
 /////GENERAMOS RUTA
 include "/Applications/MAMP/htdocs/transportgest/LOGICA/distribuirCargasRuta.php";
 include "/Applications/MAMP/htdocs/transportgest/LOGICA/guardarRuta.php";
+include "/Applications/MAMP/htdocs/transportgest/COMMUNICATIONS/enviarCorreosRuta.php";
 /////GUARDAMOS RUTA Y SU VALORACION
 if (isset($_SESSION['rutaGuardada']))
 {
